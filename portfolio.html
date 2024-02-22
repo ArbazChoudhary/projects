@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        nav {
+            width: 100vw;
+            background-color: #0a0909;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            /* position: fixed; */
+            /* margin-bottom: 100px; */
+            /* top: 0;
+            right: 0; */
+        }
+
+        nav h1 a {
+            text-transform: capitalize;
+            padding: 0px 25px;
+            font-size: 30px;
+            text-decoration: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0px 25px;
+            text-transform: uppercase;
+        }
+
+        nav #nav-icons a:hover {
+            text-decoration: underline;
+            /* background-color: rgb(84, 81, 81); */
+        }
+
+        #nav-icons {
+            display: flex;
+        }
+
+        .main {
+            /* background: url(./images/hero-bg.jpg); */
+            width: 100vw;
+            height: 539px;
+            /* border: 1px solid red; */
+            /* display: block; */
+            /* z-index: 10000; */
+            position: relative;
+        }
+
+        .main img {
+            width: 100%;
+            height: 539px;
+            /* display: inline-block; */
+        }
+
+        .main .intro {
+            position: absolute;
+            top: 200px;
+            left: 400px;
+        }
+
+        .intro h1 {
+            /* text-transform: capitalize; */
+            font-size: 90px;
+            font-weight: 500;
+        }
+
+        .intro p {
+            font-size: 30px;
+            text-align: center;
+            text-transform: capitalize;
+            padding-top: 20px;
+        }
+
+        .page2 {
+            height: 608px;
+            width: 100vw;
+            /* border: 1px solid red; */
+            background-color: #c2c2c2;
+            position: absolute;
+        }
+
+        .about-section {
+            width: 80vw;
+            height: 500px;
+            /* border: 1px solid black; */
+            background-color: #fff;
+            margin: 60px auto;
+            padding: 30px;
+        }
+
+        .about-section .box1 {
+            width: 45%;
+            height: 100%;
+            /* border: 1px solid red; */
+            float: left;
+            padding: 10px;
+            /* margin: 10px; */
+            margin-right: 45px;
+        }
+
+        .box1 .photo {
+            width: 40%;
+            height: 200px;
+            float: left;
+            /* border: 1px solid black; */
+            /* margin-right: 5px; */
+        }
+
+        .photo img {
+            height: 100%;
+            width: 100%;
+
+        }
+
+        .details {
+            width: 57%;
+            height: 200px;
+            float: left;
+            /* border: 1px solid black; */
+            margin-left: 10px;
+            color: #000;
+            padding: 5px;
+            overflow: auto;
+        }
+
+        .details p {
+            font-size: 16px;
+            line-height: 45px;
+        }
+
+        .box1 .skills {
+            width: 100%;
+            height: 200px;
+            float: left;
+            /* border: 1px solid black; */
+            margin-top: 20px;
+            color: #000;
+            padding: 10px;
+        }
+
+        .skills p {
+            /* font-size: 20px; */
+            /* line-height: 20px; */
+            margin: 2px;
+        }
+
+        .about-section .box2 {
+            width: 45%;
+            height: 100%;
+            /* border: 1px solid red; */
+            float: left;
+            color: #000;
+            margin-left: 45px;
+
+        }
+
+        .box2 h2 {
+            font-size: 26px;
+            padding: 10px;
+        }
+
+        .box2 p {
+            font-size: 18px;
+            padding: 10px;
+            text-align: justify;
+        }
+
+        .page3 {
+            height: 1200px;
+            width: 100vw;
+            /* border: 1px solid red; */
+            background-color: #c2c2c2;
+            position: absolute;
+            top: 1200px;
+            left: 0px;
+            padding: 10px;
+            color: #000;
+        }
+
+        .page3 h2 {
+            text-align: center;
+            font-size: 40px;
+            font-weight: 700;
+        }
+
+        .page3 p {
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .cards {
+            height: 750px;
+            width: 90%;
+            /* border: 1px solid red; */
+            margin: 10px auto;
+            padding: 30px 20px;
+        }
+
+        .cards .card {
+            width: 32%;
+            height: 48%;
+            /* border: 1px solid black; */
+            background-color: #fff;
+            float: left;
+            margin: 5px;
+            border-radius: 10px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .card i {
+            color: black;
+            font-size: 20px;
+            border: 10px solid blue;
+            border-radius: 50%;
+            /* background-color: ; */
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .card i:hover {
+            background-color: blue;
+            font-size: 40px;
+            border: none;
+        }
+
+        .card h2 {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .card p {
+            font-size: 18px;
+            padding: 10px;
+        }
+
+        .page3 .experience-box {
+            width: 100%;
+            height: 300px;
+            background-color: rgba(0, 0, 255, 0.4);
+            /* padding-left: 0; */
+            margin-left: 0;
+        }
+
+        .page3 .exp-icon {
+            width: 25%;
+            height: 100%;
+            float: left;
+            padding: 50px;
+        }
+
+        .exp-icon i {
+            /* text-align: center; */
+            /* align-items: center; */
+            font-size: 40px;
+            padding-left: 100px;
+            padding-bottom: 40px;
+            /* border: 5px solid white;
+            border-radius: 60%; */
+        }
+
+        .page4 {
+            height: 1200px;
+            width: 100vw;
+            background-color: #c2c2c2;
+            position: absolute;
+            top: 2400px;
+            left: 0;
+            color: #000;
+        }
+
+        .page4 h1 {
+            font-size: 36px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .page4 p {
+            font-size: 18px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .page4 .work-cards {
+            height: 600px;
+            width: 100%;
+            /* border: 1px solid black; */
+            padding: 20px 80px;
+        }
+
+        .work-cards .work-card {
+            width: 30%;
+            height: 45%;
+            background-color: aqua;
+            float: left;
+            margin: 20px 20px;
+        }
+
+        .work-card img {
+            width: 100%;
+            height: 72%;
+        }
+
+        .work-card h3 {
+            padding: 5px 20px;
+        }
+
+        .work-card span {
+            padding: 5px 20px;
+        }
+
+        .work-card i {
+            font-size: 24px;
+            margin-left: 80px;
+            border: 3px solid blue;
+            font-size: 20px;
+            border-radius: 50%;
+            padding: 5px 8px;
+            color: blue;
+        }
+
+        .page4 .testimonial {
+            height: 500px;
+            width: 100%;
+            background-color: hsla(240, 59%, 60%, 0.5);
+        }
+
+        .testimonial .test-img {
+            height: 60%;
+            width: 25%;
+            background-color: white;
+            float: left;
+            margin: 30px 150px;
+        }
+
+        .test-img img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .page5 {
+            height: 800px;
+            width: 100vw;
+            background-color: #c2c2c2;
+            position: absolute;
+            top: 3600px;
+            left: 0;
+            color: #000;
+            padding: 30px;
+        }
+
+        .page5 h1 {
+            font-size: 36px;
+            font-weight: 600;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .page5 p {
+            font-size: 18px;
+            text-align: center;
+            /* padding: 20px; */
+        }
+
+        .page5 .blog-card {
+            width: 30%;
+            height: 65%;
+            background-color: white;
+            float: left;
+            margin: 30px 20px;
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 50%;
+        }
+
+        .blog-card #photo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 15px 10px;
+            /* display: inline; */
+        }
+
+        .blog-card h1 {
+            font-size: 28px;
+        }
+
+        .blog-card p {
+            font-size: 18px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .page6 {
+            height: 1100px;
+            width: 100%;
+            background-color: hsl(244, 52%, 65%);
+            position: absolute;
+            top: 4400px;
+            left: 0;
+            color: #000;
+            padding: 30px;
+        }
+
+        .contact-form {
+            height: 700px;
+            width: 90%;
+            margin: 100px auto;
+            background-color: #fff;
+            /* padding: 20px 50px; */
+        }
+
+        .contact-form .form {
+            height: 500px;
+            width: 45%;
+            /* border: 1px solid black; */
+            float: left;
+            margin: 20px 20px;
+        }
+
+        .form p {
+            color: blue;
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: -20px;
+        }
+
+        .form input {
+            width: 100%;
+            height: 50px;
+            margin-top: 20px;
+            padding: 10px;
+            /* padding: 20px; */
+            /* margin: 20px; */
+        }
+
+        .form textarea {
+            width: 100%;
+            padding: 10px;
+        }
+
+        .contact-form button {
+            background-color: blue;
+            padding: 10px 20px;
+            border: none;
+            text-align: center;
+            display: block;
+            margin-left: 200px;
+            color: white;
+            font-size: 20px;
+            border-radius: 20px;
+        }
+
+        .contact-form button:hover {
+            outline: 2px solid rgb(189, 186, 186);
+            opacity: 0.5;
+        }
+
+        .contact-form span {
+            font-size: 18px;
+            display: inline-block;
+            padding-top: 20px;
+        }
+
+        .form i {
+            font-size: 20px;
+            padding-top: 30px;
+            padding-right: 10px;
+        }
+
+        .form .social-links {
+            margin-top: 40px;
+            width: 100%;
+            /* border: 1px solid red; */
+        }
+
+        .social-links i {
+            padding-left: 40px;
+            font-size: 30px;
+        }
+
+        .footer {
+            width: 100%;
+            height: 100px;
+            background-color: rgb(95, 95, 194);
+        }
+
+        .footer p {
+            text-align: center;
+            color: white;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div>
+            <h1 id="logo"><a href="#home">irshad.dev</a></h1>
+        </div>
+        <div id="nav-icons">
+            <a href="#home">home</a>
+            <a href="#about">about</a>
+            <a href="#services">services</a>
+            <a href="#work">work</a>
+            <a href="#blog">blog</a>
+            <a href="#contact">contact</a>
+        </div>
+    </nav>
+    <div class="main" id="home">
+        <div class="bg-img">
+            <img src="images/hero-bg.jpg" alt="">
+            <div class="intro">
+                <h1>I am Irshad Alam</h1>
+                <p>web developer</p>
+            </div>
+        </div>
+    </div>
+    <div class="page2" id="about">
+        <div class="about-section">
+            <div class="box1">
+                <div class="photo">
+                    <img src="images/MyPhoto.jpg" alt="">
+                </div>
+                <div class="details">
+                    <p><b>Name: </b>Irshad Alam</p>
+                    <p><b>Profile: </b>Web Developer</p>
+                    <p><b>Email: </b>irshad1414@gmail.com</p>
+                    <p><b>Phone: </b>+91 9137464728</p>
+                </div>
+                <div class="skills">
+                    <h4>Skills</h4><br>
+                    <p>HTML 85%</p>
+                    <progress id="html" value="85" max="100"></progress>
+                    <p>CSS 75%</p>
+                    <progress id="css" value="75" max="100"></progress>
+                    <p>JavaScript 80%</p>
+                    <progress id="js" value="80" max="100"></progress>
+                    <p>React 65%</p>
+                    <progress id="react" value="65" max="100"></progress>
+                </div>
+            </div>
+            <div class="box2">
+                <h2>About Me</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium placeat libero in reiciendis
+                    dignissimos, veritatis, unde consectetur voluptates, assumenda esse doloremque distinctio! Nostrum,
+                    molestias cumque!</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium placeat libero in reiciendis
+                    dignissimos, veritatis, unde consectetur voluptates, assumenda esse doloremque distinctio! Nostrum,
+                    molestias cumque!</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium placeat libero in reiciendis
+                    dignissimos, veritatis, unde consectetur voluptates, assumenda esse doloremque distinctio! Nostrum,
+                    molestias cumque!</p>
+            </div>
+        </div>
+    </div>
+    <div class="page3" id="services">
+        <h2>SERVICES</h2>
+        <P>Lorem ipsum dolor sit amet consectetur adipisicing elit.</P>
+        <div class="cards">
+            <div class="card">
+                <i class="fa-solid fa-briefcase"></i>
+                <h3>WEB DESIGN</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis quam inventore neque autem nihil
+                    ab ad cum ipsum, quibusdam officia, quaerat quia quasi reprehenderit!</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-list-check"></i>
+                <h3>WEB DEVELOPMENT</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis quam inventore neque autem nihil
+                    ab ad cum ipsum, quibusdam officia, quaerat quia quasi reprehenderit!</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-chart-simple"></i>
+                <h3>PHOTOGRAPHY</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis quam inventore neque autem nihil
+                    ab ad cum ipsum, quibusdam officia, quaerat quia quasi reprehenderit!</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-binoculars"></i>
+                <h3>RESPONSIVE DESIGN</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis quam inventore neque autem nihil
+                    ab ad cum ipsum, quibusdam officia, quaerat quia quasi reprehenderit!</p>
+            </div>
+            <div class="card">
+                <i class="fa-regular fa-lightbulb"></i>
+                <h3>GRAPHIC DESIGN</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis quam inventore neque autem nihil
+                    ab ad cum ipsum, quibusdam officia, quaerat quia quasi reprehenderit!</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-calendar-week"></i>
+                <h3>MARKETING SERVICES</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis quam inventore neque autem nihil
+                    ab ad cum ipsum, quibusdam officia, quaerat quia quasi reprehenderit!</p>
+            </div>
+        </div>
+        <div class="experience-box">
+            <div class="exp-icon">
+                <i class="fa-solid fa-check"></i>
+                <p>450</p>
+                <p>WORKS COMPLETED</p>
+            </div>
+            <div class="exp-icon">
+                <i class="fa-regular fa-newspaper"></i>
+                <p>25</p>
+                <p>YEARS OF EXPERIENCE</p>
+            </div>
+            <div class="exp-icon">
+                <i class="fa-solid fa-user-group"></i>
+                <p>550</p>
+                <p>TOTAL CLIENTS</p>
+            </div>
+            <div class="exp-icon">
+                <i class="fa-solid fa-award"></i>
+                <p>48</p>
+                <p>AWARDS WON</p>
+            </div>
+        </div>
+    </div>
+    <div class="page4" id="work">
+        <h1>PORTFOLIO</h1>
+        <P>Lorem ipsum dolor sit amet consectetur adipisicing elit.</P>
+        <div class="work-cards">
+            <div class="work-card">
+                <img src="./images/work-1.jpg" alt="">
+                <h3>Lorem, ipsum dolor.</h3>
+                <span>Web Design</span> / 12 Feb, 2024
+                <i class="fa-duotone fa-plus"></i>
+            </div>
+            <div class="work-card">
+                <img src="./images/work-2.jpg" alt="">
+                <h3>Lorem, ipsum dolor.</h3>
+                <span>Web Design</span> / 12 Feb, 2024
+                <i class="fa-duotone fa-plus"></i>
+            </div>
+            <div class="work-card">
+                <img src="./images/work-3.jpg" alt="">
+                <h3>Lorem, ipsum dolor.</h3>
+                <span>Web Design</span> / 12 Feb, 2024
+                <i class="fa-duotone fa-plus"></i>
+            </div>
+            <div class="work-card">
+                <img src="./images/work-4.jpg" alt="">
+                <h3>Lorem, ipsum dolor.</h3>
+                <span>Web Design</span> / 12 Feb, 2024
+                <i class="fa-duotone fa-plus"></i>
+            </div>
+            <div class="work-card">
+                <img src="./images/work-5.jpg" alt="">
+                <h3>Lorem, ipsum dolor.</h3>
+                <span>Web Design</span> / 12 Feb, 2024
+                <i class="fa-duotone fa-plus"></i>
+            </div>
+            <div class="work-card">
+                <img src="./images/work-6.jpg" alt="">
+                <h3>Lorem, ipsum dolor.</h3>
+                <span>Web Design</span> / 12 Feb, 2024
+                <i class="fa-duotone fa-plus"></i>
+            </div>
+        </div>
+        <div class="testimonial">
+            <div class="test-img">
+                <img src="images/testimonial-1.jpg" alt="">
+                <h1>MARTA SOCRATE</h1>
+                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit.</P>
+            </div>
+            <div class="test-img">
+                <img src="./images/testimonial-2.jpg" alt="">
+                <h1>XAVI ALONSO</h1>
+                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit.</P>
+            </div>
+        </div>
+    </div>
+    <div class="page5" id="blog">
+        <h1>BLOG</h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p style="font-size: 50px; color: blue; margin-top: -30px;">_</p>
+        <div class="blog-card">
+            <img src="./images/post-1.jpg" alt="">
+            <h1>See more idea about travel</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa inventore esse facere asperiores laborum
+                hic.</p>
+            <img id="photo" src="./images/MyPhoto.jpg" alt="">
+        </div>
+        <div class="blog-card">
+            <img src="./images/post-2.jpg" alt="">
+            <h1>See more idea about travel</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa inventore esse facere asperiores laborum
+                hic.</p>
+            <img id="photo" src="./images/MyPhoto.jpg" alt="">
+        </div>
+        <div class="blog-card">
+            <img src="./images/post-3.jpg" alt="">
+            <h1>See more idea about travel</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa inventore esse facere asperiores laborum
+                hic.</p>
+            <img id="photo" src="./images/MyPhoto.jpg" alt="">
+        </div>
+    </div>
+    <div class="page6" id="contact">
+        <div class="contact-form">
+            <div class="form">
+                <h1>Send Message Us</h1>
+                <p>__________</p>
+                <input type="text" placeholder="Your name"><br><br>
+                <input type="email" placeholder="Your email"><br><br>
+                <input type="text" placeholder="Subject"><br><br>
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+            </div>
+            <div class="form">
+                <h1>Get in Touch</h1>
+                <p>__________</p>
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa aliquam expedita, hic esse
+                    voluptatem
+                    maiores, officia nostrum nesciunt vitae nam at quibusdam aut blanditiis, unde sint fugiat nemo
+                    accusantium! Saepe.</span>
+                <i class="fa-solid fa-location-dot"></i> Pune, Maharashtra, 411014 <br>
+                <i class="fa-solid fa-mobile-screen-button"></i> +91-9137464728 <br>
+                <i class="fa-regular fa-envelope"></i> irshad1414@gmail.com
+                <div class="social-links">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+            </div>
+            <button>Send Message</button>
+        </div>
+        <div class="footer">
+            <p>&copy;Copyright <b>Irshad.Dev</b> All Right Reserved</p>
+            <p>Designed BY BootstrapMAde</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
